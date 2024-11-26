@@ -1,8 +1,11 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-  reactStrictMode: true,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export', // Habilita exportação estática
+  images: {
+    unoptimized: true, // Desabilita otimização de imagens (necessário para exportação estática)
+  },
+  basePath: '/portfolio', // Substitua pelo nome do seu repositório
+  trailingSlash: true, // Adiciona barra no final das URLs
 };
 
-export default nextConfig;
+module.exports = nextConfig;
