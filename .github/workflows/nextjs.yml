@@ -63,7 +63,7 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
 
       - name: Create .env file
-        run: echo "NEXT_PUBLIC_API_KEY=${{ secrets.API_KEY }}" > .env
+        run: echo "NEXT_PUBLIC_WORLD=${{ secrets.NEXT_PUBLIC_WORLD }}" > .env
 
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
