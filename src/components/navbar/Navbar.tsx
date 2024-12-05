@@ -1,6 +1,4 @@
 import style from "@/components/navbar/navbar.module.css";
-import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Eclipse } from "lucide-react";
 
