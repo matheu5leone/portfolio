@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+.modules{
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(77, 77, 77, 0.288);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    
+}
+.modules:hover{
+    box-shadow: 0px 20px 40px rgba(71, 71, 71, 0.212);
+}
+.avatarModule{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.textModule{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.avatarBox{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden; /* Corta a imagem quando ela ultrapassar a área da div */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px rgb(3, 255, 3) solid;
+}
+.avatar {
+    object-fit: cover; /* Faz a imagem cobrir a área da div, cortando se necessário */
+}

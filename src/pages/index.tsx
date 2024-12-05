@@ -1,12 +1,17 @@
+import style from "@/styles/Home.module.css";
+import Navbar from "@/components/navbar/Navbar";
+import About from "@/components/about/About";
+
 export default function Home() {
 
-  const WORLD = process.env.NEXT_PUBLIC_WORLD
+
 
   return (
-    <>
-      <div className="container">
-        <p className="text">Hello {WORLD}!</p>
-      </div>
-    </>
+    <div className={style.container}>
+      <Navbar />
+      <section className={style.sectionAbout}>
+      <About />
+      </section>
+    </div>
   );
 }

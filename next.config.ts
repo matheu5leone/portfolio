@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
-  output: 'export', // Habilita exportação estática
+  ...(isProd && { output: 'export' }), // Habilita exportação estática
   images: {
     unoptimized: true, // Desabilita otimização de imagens (necessário para exportação estática)
   },

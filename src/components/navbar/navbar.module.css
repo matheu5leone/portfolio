@@ -1,0 +1,23 @@
+.navbar{
+    padding: 10px;
+    display: flex;
+    width: 100hw;
+    justify-content: end;
+    
+}
+
+.btnTheme {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--foreground);
+    color: var(--background);
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  
+  .btnTheme:hover {
+    opacity: 0.8;
+  }
+  
