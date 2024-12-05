@@ -61,15 +61,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
 
-      - name: Create environment variables
-        run: |
-          echo "NEXT_PUBLIC_WORLD=${{ secrets.NEXT_PUBLIC_WORLD }}" >> $GITHUB_ENV
-          echo "NODE_ENV=${{ secrets.NODE_ENV }}" >> $GITHUB_ENV
-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
       - name: Build with Next.js
+        env:
+          NEXT_PUBLIC_WORLD: ${{ secrets.NEXT_PUBLIC_WORLD }}
+          NODE_ENV: ${{ secrets.NODE_ENV }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
       - name: Upload artifact
