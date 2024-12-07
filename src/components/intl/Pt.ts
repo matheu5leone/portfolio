@@ -1,4 +1,4 @@
-import LanguageTokens from "./languages";
+import LanguageTokens from "./Languages";
 
 
 class Pt implements LanguageTokens {

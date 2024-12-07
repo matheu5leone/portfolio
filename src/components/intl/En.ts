@@ -1,4 +1,4 @@
-import LanguageTokens from "./languages";
+import LanguageTokens from "./Languages";
 
 
 class En implements LanguageTokens {

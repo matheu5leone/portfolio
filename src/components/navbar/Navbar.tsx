@@ -1,11 +1,7 @@
 import style from "@/components/navbar/navbar.module.css";
 import { useEffect, useState, useMemo } from "react";
 import { Eclipse, Globe } from "lucide-react";
-import { useRouter } from 'next/router';
-import { useIntl } from 'react-intl';
-import { usePathname } from 'next/navigation'; // Importando usePathname
-import Image from "next/image"; // Importando o componente Image do Next.js
-import LanguageTokens from "../intl/languages";
+import Image from "next/image";
 import En from "../intl/En";
 import Pt from "../intl/Pt";
 
