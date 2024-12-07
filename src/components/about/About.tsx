@@ -12,10 +12,11 @@ export default function About() {
                     <div className={style.avatarBox}>
                         <Image
                             className={style.avatar}
-                            src="./fotoProfissionalModificada.png"
+                            src="/profilePic.png"
                             alt="Matheus Leone"
                             width={217}
                             height={245}
+                            priority
                         />
                     </div>
                     <b className={style.container}>{WORLD}</b>

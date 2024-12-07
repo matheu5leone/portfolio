@@ -1,12 +1,16 @@
 .navbar{
-    padding: 10px;
+    padding: 20px;
     display: flex;
     width: 100hw;
-    justify-content: end;
+    justify-content: flex-end;
+    gap: 20px;
     
 }
 
 .btnTheme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 30px;
     height: 30px;
     border: none;
@@ -21,3 +25,31 @@
     opacity: 0.8;
   }
   
+  .flagImage {
+    display: block; /* Remover espaços abaixo da imagem */
+    opacity: 0.3; /* Opacidade normal */
+    transition: opacity 0.3s; /* Transição suave para a opacidade */
+}
+
+.flagImage:hover {
+    opacity: 1; /* Aumenta a opacidade da bandeira */
+}
+
+.flagContainer {
+    position: relative; /* Contêiner para posicionar o ícone sobre a imagem */
+}
+
+.globeIcon {
+    position: absolute; /* Posiciona o globo sobre a bandeira */
+    top: 49%; /* Alinha verticalmente ao centro */
+    left: 49%; /* Alinha horizontalmente ao centro */
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Garante que o ícone não atrapalhe o clique na bandeira */
+    opacity: 1; /* A opacidade inicial do globo */
+    transition: opacity 0.3s; /* Transição suave para a opacidade */
+}
+
+/* Quando a bandeira está com hover, o globo desaparece */
+.flagImage:hover + .globeIcon {
+    opacity: 0; /* Torna o globo invisível quando a bandeira está em hover */
+}

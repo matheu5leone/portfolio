@@ -39,7 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px rgb(3, 255, 3) solid;
+    border: 2px var(--background) solid;
 }
 .avatar {
     object-fit: cover; /* Faz a imagem cobrir a área da div, cortando se necessário */
