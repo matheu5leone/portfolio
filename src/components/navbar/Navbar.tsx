@@ -1,19 +1,23 @@
 import style from "@/components/navbar/navbar.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Eclipse, Globe } from "lucide-react";
 import { useRouter } from 'next/router';
 import { useIntl } from 'react-intl';
 import { usePathname } from 'next/navigation'; // Importando usePathname
 import Image from "next/image"; // Importando o componente Image do Next.js
+import LanguageTokens from "../intl/languages";
+import En from "../intl/En";
+import Pt from "../intl/Pt";
 
 export default function Navbar() {
   const [theme, setTheme] = useState<string | null>(null);
-  const { formatMessage } = useIntl();
-  const { locale, push } = useRouter();
-  const pathname = usePathname(); // Pegando o caminho atual da URL
+  const [isEnglish, setLanguage] = useState(true);
 
-  // Usando um booleano para controlar o idioma
-  const isEnglish = locale === 'en';
+  const languageToken = useMemo(() => {
+    return isEnglish ? new En() : new Pt()
+  }, [isEnglish]);
+
+  const switchLanguage = () => setLanguage(!isEnglish);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
@@ -30,24 +34,15 @@ export default function Navbar() {
     }
   };
 
-  const switchLanguage = () => {
-    // Definindo o novo idioma
-    const newLang = isEnglish ? 'pt' : 'en';
-
-    // Redirecionando para o mesmo caminho, mas com o novo idioma
-    push(pathname, undefined, { locale: newLang });
-  };
-
   return (
     <main className={style.navbar}>
-      <h1>{formatMessage({ id: 'hello' })}</h1>
+      <h1>{languageToken.getHello()}</h1>
       <button className={style.btnTheme} onClick={switchLanguage}>
-        {/* Contêiner para a imagem e ícone */}
         <div className={style.flagContainer}>
           <Image
-            src={isEnglish ? "/portfolio/eua.png" : "/portfolio/brasil.png"} // Troca entre as bandeiras
+            src={isEnglish ? "/portfolio/eua.png" : "/portfolio/brasil.png"}
             alt={isEnglish ? "EUA" : "Brasil"}
-            width={30} // Tamanho ajustável
+            width={30}
             height={30}
             className={style.flagImage}
           />
