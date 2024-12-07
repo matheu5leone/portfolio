@@ -3,12 +3,14 @@
 :root {
   --background: #c4c4c4;
   --foreground: #202020;
+  --cards: #dad8d8;
 }
 
 /* Tema escuro ativado */
 body.dark-theme {
   --background: #202020;
   --foreground: #c4c4c4;
+  --cards: #2c2c2c;
 }
 
 * {

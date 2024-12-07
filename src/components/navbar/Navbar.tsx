@@ -53,7 +53,6 @@ export default function Navbar() {
           />
           <Globe className={style.globeIcon} />
         </div>
-        <div className={style.notification}></div> {/* Notificação */}
       </button>
       <button className={style.btnTheme} onClick={changeTheme}>
         <Eclipse />
