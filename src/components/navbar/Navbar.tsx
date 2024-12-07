@@ -45,7 +45,7 @@ export default function Navbar() {
         {/* Contêiner para a imagem e ícone */}
         <div className={style.flagContainer}>
           <Image
-            src={isEnglish ? "/eua.png" : "/brasil.png"} // Troca entre as bandeiras
+            src={isEnglish ? "/portfolio/eua.png" : "/portfolio/brasil.png"} // Troca entre as bandeiras
             alt={isEnglish ? "EUA" : "Brasil"}
             width={30} // Tamanho ajustável
             height={30}
