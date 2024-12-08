@@ -6,8 +6,8 @@
     
 }
 .modules{
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 560px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +20,7 @@
     box-shadow: 0px 20px 40px rgba(71, 71, 71, 0.212);
 }
 .avatarModule{
+    width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,9 +28,13 @@
     gap: 10px;
 }
 .textModule{
+    width: 250px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 12px;
 }
 .avatarBox{
     width: 200px;
@@ -43,4 +48,24 @@
 }
 .avatar {
     object-fit: cover; /* Faz a imagem cobrir a área da div, cortando se necessário */
+}
+.greetings{
+    font-size: 16px;
+}
+.name{
+    font-size: 26px;
+}
+.role{
+    font-size: 16px;
+}
+.iconsSocial a:visited { 
+    color: inherit; /* Mantém a cor herdada do link não visitado */ 
+    text-decoration: none; /* Remove a decoração de texto */
+}
+.iconsSocial svg{
+    padding: 10px;
+    transition: 0.3s ease;
+}
+.iconsSocial svg:hover{
+    filter: drop-shadow(0 0 5px rgba(125, 251, 255, 0.637));
 }

@@ -7,6 +7,13 @@ class Pt implements LanguageTokens {
 
         return "Olá!"
     }
+    getGreetings(): string {
+        return "Olá, eu sou"
+    }
+    getRole(): string {
+        return "Analista de Sistemas e Desenvolvedor"
+    }
+
 
 }
 

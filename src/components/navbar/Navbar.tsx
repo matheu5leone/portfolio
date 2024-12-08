@@ -1,19 +1,21 @@
 import style from "@/components/navbar/navbar.module.css";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { Eclipse, Globe } from "lucide-react";
 import Image from "next/image";
-import En from "../intl/En";
-import Pt from "../intl/Pt";
 
-export default function Navbar() {
+interface LanguageToken {
+  getHello: () => string;
+}
+
+interface NavbarProps {
+  language: boolean;
+  switchLanguage: () => void;
+  languageToken: LanguageToken;
+}
+
+export default function Navbar({ language, switchLanguage, languageToken }: NavbarProps) {
   const [theme, setTheme] = useState<string | null>(null);
-  const [isEnglish, setLanguage] = useState(true);
-
-  const languageToken = useMemo(() => {
-    return isEnglish ? new En() : new Pt()
-  }, [isEnglish]);
-
-  const switchLanguage = () => setLanguage(!isEnglish);
+  const isEnglish = language;
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
@@ -32,7 +34,7 @@ export default function Navbar() {
 
   return (
     <main className={style.navbar}>
-      <h1>{languageToken.getHello()}</h1>
+      {/* <h1>{languageToken.getHello()}</h1> */}
       <button className={style.btnTheme} onClick={switchLanguage}>
         <div className={style.flagContainer}>
           <Image

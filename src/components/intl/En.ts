@@ -7,6 +7,12 @@ class En implements LanguageTokens {
 
         return "Hello!"
     }
+    getGreetings(): string {
+        return "Hello, I am"
+    }
+    getRole(): string {
+        return "Systems Analyst and Developer"
+    }
 
 }
 
