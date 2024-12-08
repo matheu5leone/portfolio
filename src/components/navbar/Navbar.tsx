@@ -13,7 +13,7 @@ interface NavbarProps {
   languageToken: LanguageToken;
 }
 
-export default function Navbar({ language, switchLanguage, languageToken }: NavbarProps) {
+export default function Navbar({ language, switchLanguage }: NavbarProps) {
   const [theme, setTheme] = useState<string | null>(null);
   const isEnglish = language;
 
