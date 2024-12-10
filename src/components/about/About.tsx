@@ -10,7 +10,6 @@ const About: React.FC<AboutProps> = ({ languageToken }) => {
   const WORLD = process.env.NEXT_PUBLIC_WORLD;
 
   return (
-    <main className={style.container}>
       <div className={style.modules}>
         <div className={style.avatarModule}>
           <div className={style.avatarBox}>
@@ -50,7 +49,6 @@ const About: React.FC<AboutProps> = ({ languageToken }) => {
           </div>
         </div>
       </div>
-    </main>
   );
 };
 
