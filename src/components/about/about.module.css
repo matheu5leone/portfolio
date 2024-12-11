@@ -1,4 +1,4 @@
-.modules{
+.modules {
     height: 250px;
     width: 560px;
     display: flex;
@@ -9,18 +9,23 @@
     transition: all 0.3s ease;
     transform: translateY(-15%);
 }
-@media (max-width: 768px) {
+
+@media (max-width: 800px) {
     .modules {
-        display: flex;
         justify-content: space-evenly;
-        align-items: center;
-        width: 90%; 
+        width: 90%;
         flex-direction: column;
         min-height: calc(50vh);
     }
 }
 
-.avatarModule{
+@media (max-width: 375px) {
+    .modules {
+        min-height: calc(70vh);
+    }
+}
+
+.avatarModule {
     width: 250px;
     display: flex;
     justify-content: center;
@@ -28,8 +33,9 @@
     flex-direction: column;
     gap: 10px;
 }
-.textModule{
-    width: 250px;
+
+.textModule {
+    width: 280px;
     height: 200px;
     display: flex;
     justify-content: center;
@@ -37,43 +43,54 @@
     flex-direction: column;
     gap: 12px;
 }
-.avatarBox{
+
+.avatarBox {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    overflow: hidden; /* Corta a imagem quando ela ultrapassar a área da div */
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px var(--background) solid;
     transition: all 0.3s ease;
 }
+
 .avatar {
     object-fit: cover; /* Faz a imagem cobrir a área da div, cortando se necessário */
 }
-.avatarBox:hover{
+
+.avatarBox:hover {
     filter: drop-shadow(0 0 20px rgba(125, 251, 255, 0.237));
 }
-.greetings{
+
+.greetings {
     font-size: 16px;
 }
-.name{
+
+.name {
     font-size: 26px;
 }
-.role{
+
+.role {
     font-size: 16px;
 }
-.iconsSocial a { 
-    color: inherit; /* Mantém a cor herdada do link não visitado */ 
-    text-decoration: none; /* Remove a decoração de texto */
+
+.iconsSocial a {
+    color: inherit;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
 }
+
 .iconsSocial a:visited {
     text-decoration: none; /* Remove a decoração de texto */
 }
-.iconsSocial svg{
+
+.iconsSocial svg {
     padding: 10px;
     transition: 0.3s ease;
 }
-.iconsSocial svg:hover{
+
+.iconsSocial svg:hover {
     filter: drop-shadow(0 0 5px rgba(125, 251, 255, 0.637));
 }
