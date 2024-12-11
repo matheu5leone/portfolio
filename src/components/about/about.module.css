@@ -60,10 +60,6 @@
     object-fit: cover; /* Faz a imagem cobrir a área da div, cortando se necessário */
 }
 
-.avatarBox:hover {
-    filter: drop-shadow(0 0 20px rgba(125, 251, 255, 0.237));
-}
-
 .greetings {
     font-size: 16px;
 }

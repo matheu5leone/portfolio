@@ -5,6 +5,7 @@
     align-items: center;
     gap: 20px;
     height: 6vh;
+    z-index: 1;
 }
 .btnTheme {
     display: flex;
@@ -19,6 +20,7 @@
     cursor: pointer;
     transition: opacity 0.3s;
     -webkit-tap-highlight-color: transparent;
+    z-index: 2;
 }
 .btnTheme:hover {
     opacity: 0.8;

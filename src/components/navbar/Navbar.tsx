@@ -11,26 +11,11 @@ interface NavbarProps {
   language: boolean;
   switchLanguage: () => void;
   languageToken: LanguageToken;
+  changeTheme: () => void; 
 }
 
-export default function Navbar({ language, switchLanguage }: NavbarProps) {
-  const [theme, setTheme] = useState<string | null>(null);
+export default function Navbar({ language, switchLanguage, changeTheme }: NavbarProps) {
   const isEnglish = language;
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setTheme(savedTheme);
-    document.body.classList.toggle("dark-theme", savedTheme === "dark");
-  }, []);
-
-  const changeTheme = () => {
-    if (theme) {
-      const newTheme = theme === "light" ? "dark" : "light";
-      setTheme(newTheme);
-      document.body.classList.toggle("dark-theme", newTheme === "dark");
-      localStorage.setItem("theme", newTheme);
-    }
-  };
 
   return (
     <main className={style.navbar}>
