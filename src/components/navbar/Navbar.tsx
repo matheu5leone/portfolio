@@ -1,5 +1,5 @@
 import style from "@/components/navbar/navbar.module.css";
-import { Eclipse, Globe } from "lucide-react";
+import { Eclipse, Globe, Play, Pause } from "lucide-react";
 import Image from "next/image";
 
 interface LanguageToken {
@@ -11,14 +11,18 @@ interface NavbarProps {
   switchLanguage: () => void;
   languageToken: LanguageToken;
   changeTheme: () => void; 
+  toggleAnimation: () => void; 
+  isAnimated: boolean;
 }
 
-export default function Navbar({ language, switchLanguage, changeTheme }: NavbarProps) {
+export default function Navbar({ language, switchLanguage, changeTheme, toggleAnimation, isAnimated }: NavbarProps) {
   const isEnglish = language;
 
   return (
     <main className={style.navbar}>
-      {/* <h1>{languageToken.getHello()}</h1> */}
+      <button className={style.btnTheme} onClick={toggleAnimation}> 
+        {isAnimated ? <Pause className={style.pauseIcon} /> : <Play className={style.playIcon} />} 
+      </button>
       <button className={style.btnTheme} onClick={switchLanguage}>
         <div className={style.flagContainer}>
           <Image
@@ -34,6 +38,7 @@ export default function Navbar({ language, switchLanguage, changeTheme }: Navbar
       <button className={style.btnTheme} onClick={changeTheme}>
         <Eclipse />
       </button>
+
     </main>
   );
 }

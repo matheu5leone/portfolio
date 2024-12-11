@@ -9,6 +9,7 @@ import Pt from "@/components/intl/Pt";
 export default function Home() {
   const [isEnglish, setLanguage] = useState<boolean>(true);
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
+  const [isAnimated, setAnimation] = useState<boolean>(true);
 
   const languageToken = useMemo(() => {
     return isEnglish ? new En() : new Pt();
@@ -29,10 +30,21 @@ export default function Home() {
     document.body.classList.toggle("dark-theme", savedTheme === "dark");
   }, []);
 
+  const switchAnimation = () => {
+    setAnimation(!isAnimated)
+  }
+
   return (
     <div className={style.container}>
-      <Navbar language={isEnglish} switchLanguage={switchLanguage} languageToken={languageToken} changeTheme={changeTheme} />
-      <ParticlesComponent isDarkTheme={isDarkTheme} />
+      <Navbar
+        language={isEnglish}
+        switchLanguage={switchLanguage}
+        languageToken={languageToken}
+        changeTheme={changeTheme}
+        toggleAnimation={switchAnimation}
+        isAnimated={isAnimated}
+      />
+      {isAnimated ? <ParticlesComponent isDarkTheme={isDarkTheme} /> : null}
       <section className={style.sectionAbout}>
         <About languageToken={languageToken} />
       </section>

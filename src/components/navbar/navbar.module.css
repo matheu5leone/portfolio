@@ -15,8 +15,8 @@
     height: 30px;
     border: none;
     border-radius: 50%;
-    background-color: var(--foreground);
-    color: var(--background);
+    background-color: var(--cards);
+    color: var(--foreground);
     cursor: pointer;
     transition: opacity 0.3s;
     -webkit-tap-highlight-color: transparent;
@@ -52,4 +52,8 @@
 
 .flagImage:hover+.globeIcon {
     opacity: 0;
+}
+.playIcon{
+    left: 49%;
+    transform: translate(1px, 0px);
 }
