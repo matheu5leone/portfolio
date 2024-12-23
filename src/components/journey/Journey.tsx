@@ -9,20 +9,20 @@ interface JourneyProps {
 
 const Journey: React.FC<JourneyProps> = ({ languageToken }) => {
 
-    const handleMouseMove = (e:any) => {
-        const { currentTarget: target } = e;
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const target = e.currentTarget as HTMLDivElement;
         const rect = target.getBoundingClientRect();
         const x = e.clientX - rect.left; // Posição x dentro do elemento
         const y = e.clientY - rect.top;  // Posição y dentro do elemento
-        const xOffset = (x / rect.width - 0.5) * -10; // Calcula deslocamento no eixo X (invertido)
-        const yOffset = (y / rect.height - 0.5) * -10; // Calcula deslocamento no eixo Y (invertido)
+        const xOffset = (x / rect.width - 0.5) * -20; // Calcula deslocamento no eixo X (invertido)
+        const yOffset = (y / rect.height - 0.5) * -20; // Calcula deslocamento no eixo Y (invertido)
     
-        target.style.transform = `perspective(1000px) rotateX(${yOffset}deg) rotateY(${xOffset}deg)`;
+        target.style.transform = `perspective(1000px) rotateX(${yOffset}deg) rotateY(${xOffset}deg) scale(0.95)`;
     };
     
-    const handleMouseLeave = (e:any) => {
-        const { currentTarget: target } = e;
-        target.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+        const target = e.currentTarget as HTMLDivElement;
+        target.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
     };
 
     return (

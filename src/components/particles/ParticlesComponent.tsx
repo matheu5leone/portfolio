@@ -9,8 +9,8 @@ interface ParticlesComponentProps {
 
 const ParticlesComponent = ({ isDarkTheme }: ParticlesComponentProps) => {
   const [init, setInit] = useState(false);
-  let darkColor = '#202020'
-  let lightColor = '#c4c4c4'
+  const darkColor = '#202020'
+  const lightColor = '#c4c4c4'
 
   // Initialize the particles engine
   useEffect(() => {
