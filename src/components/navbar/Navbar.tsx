@@ -1,10 +1,7 @@
 import style from "@/components/navbar/navbar.module.css";
 import { Eclipse, Globe, Play, Pause } from "lucide-react";
 import Image from "next/image";
-
-interface LanguageToken {
-  getHello: () => string;
-}
+import LanguageToken from "../intl/Languages";
 
 interface NavbarProps {
   language: boolean;

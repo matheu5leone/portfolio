@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar/Navbar";
 import About from "@/components/about/About";
 import En from "@/components/intl/En";
 import Pt from "@/components/intl/Pt";
+import Journey from "@/components/journey/Journey";
 
 export default function Home() {
   const [isEnglish, setLanguage] = useState<boolean>(true);
@@ -46,7 +47,10 @@ export default function Home() {
       />
       {isAnimated ? <ParticlesComponent isDarkTheme={isDarkTheme} /> : null}
       <section className={style.sectionAbout}>
-        <About languageToken={languageToken} />
+        <About languageToken={languageToken} /> 
+      </section>
+      <section className={style.sectionJourney}>
+        <Journey languageToken={languageToken} />
       </section>
     </div>
   );

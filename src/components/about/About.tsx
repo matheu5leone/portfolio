@@ -1,9 +1,9 @@
 import style from "@/components/about/about.module.css";
 import Image from "next/image";
-import LanguageTokens from "../intl/Languages";
+import LanguageToken from "../intl/Languages";
 
-interface AboutProps {
-  languageToken: LanguageTokens;
+interface AboutProps{
+  languageToken: LanguageToken
 }
 
 const About: React.FC<AboutProps> = ({ languageToken }) => {

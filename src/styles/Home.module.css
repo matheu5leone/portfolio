@@ -2,9 +2,11 @@
   min-height: 100vh;
   width: 100%;
 }
-.sectionAbout {
+.sectionAbout{
+  min-height: calc(100vh - 10vh);
+}
+.sectionAbout, .sectionJourney {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 6vh); /* Ajuste para garantir que a altura seja 100vh menos 6vh */
 }

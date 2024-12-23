@@ -9,6 +9,8 @@ interface ParticlesComponentProps {
 
 const ParticlesComponent = ({ isDarkTheme }: ParticlesComponentProps) => {
   const [init, setInit] = useState(false);
+  let darkColor = '#202020'
+  let lightColor = '#c4c4c4'
 
   // Initialize the particles engine
   useEffect(() => {
@@ -23,7 +25,7 @@ const ParticlesComponent = ({ isDarkTheme }: ParticlesComponentProps) => {
     () => ({
       background: {
         color: {
-          value: isDarkTheme ? "#202020" : "#c4c4c4", // Dark or light background
+          value: isDarkTheme ? darkColor : lightColor, // Dark or light background
         },
       },
       fpsLimit: 120,
@@ -50,10 +52,10 @@ const ParticlesComponent = ({ isDarkTheme }: ParticlesComponentProps) => {
       },
       particles: {
         color: {
-          value: isDarkTheme ? "#c4c4c4" : "#202020", // Light or dark particles
+          value: isDarkTheme ? lightColor : darkColor, // Light or dark particles
         },
         links: {
-          color: isDarkTheme ? "#c4c4c4" : "#202020", // Light or dark links
+          color: isDarkTheme ? lightColor : darkColor, // Light or dark links
           distance: 150,
           enable: true,
           opacity: 0.5,
