@@ -12,17 +12,17 @@ const Journey: React.FC<JourneyProps> = ({ languageToken }) => {
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
         const target = e.currentTarget as HTMLDivElement;
         const rect = target.getBoundingClientRect();
-        const x = e.clientX - rect.left; // Posição x dentro do elemento
-        const y = e.clientY - rect.top;  // Posição y dentro do elemento
-        const xOffset = (x / rect.width - 0.5) * -20; // Calcula deslocamento no eixo X (invertido)
-        const yOffset = (y / rect.height - 0.5) * -20; // Calcula deslocamento no eixo Y (invertido)
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const xOffset = (x / rect.width - 0.5) * -10;
+        const yOffset = (y / rect.height - 0.5) * -10;
     
-        target.style.transform = `perspective(1000px) rotateX(${yOffset}deg) rotateY(${xOffset}deg) scale(0.95)`;
+        target.style.transform = `perspective(1000px) rotateX(${yOffset}deg) rotateY(${xOffset}deg)`;
     };
     
     const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
         const target = e.currentTarget as HTMLDivElement;
-        target.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+        target.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
     };
 
     return (
