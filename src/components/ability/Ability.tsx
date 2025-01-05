@@ -15,7 +15,7 @@ interface AbilityProps {
   };
 }
 
-const Ability: React.FunctionComponent<AbilityProps> = ({ languageToken, isAnimated, ability }) => {
+const Ability: React.FunctionComponent<AbilityProps> = ({ isAnimated, ability }) => {
 
 
   return (
