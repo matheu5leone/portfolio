@@ -3,6 +3,7 @@
     align-items: center;
     flex-direction: column;
     height: 65vh;
+    z-index: 1;
 }
 
 .containerSptechAndDock {
