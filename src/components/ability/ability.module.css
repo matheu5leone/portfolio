@@ -1,0 +1,28 @@
+.container {
+   position: relative;
+   width: 200px;
+   height: 200px;
+   border-radius: 10px;
+   background: var(--glass);
+   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+   backdrop-filter: blur(5px);
+   -webkit-backdrop-filter: blur(5px);
+   border: 1px solid rgba(255, 255, 255, 0.3);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background: rgb(255, 255, 255);
+   background: radial-gradient(circle, rgba(255, 255, 255, 0.20) 10%, rgba(12, 0, 255, 0) 100%);
+   gap: 20px;
+}
+
+.glow {
+   box-shadow: 0 0 5px rgb(0, 247, 255)
+}
+
+@media (max-width: 800px) {
+   .container {
+      width: 150px;
+   }
+}

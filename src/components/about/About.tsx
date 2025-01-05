@@ -1,6 +1,6 @@
 import style from "@/components/about/about.module.css";
 import Image from "next/image";
-import LanguageToken from "../intl/Languages";
+import LanguageToken from "../../util/intl/Languages";
 
 interface AboutProps{
   languageToken: LanguageToken

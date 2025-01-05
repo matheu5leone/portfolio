@@ -4,6 +4,9 @@
   --background: #c4c4c4;
   --foreground: #202020;
   --cards: #dad8d8;
+  --glass: rgba(255, 255, 255, 0.1);
+  --blue-highlight:#7dfbffdc;
+  --clr-4: #2d8f8591;
 }
 
 /* Tema escuro ativado */
@@ -11,6 +14,7 @@ body.dark-theme {
   --background: #202020;
   --foreground: #c4c4c4;
   --cards: #2c2c2c;
+  --glass: rgba(121, 121, 121, 0.1);
 }
 
 * {

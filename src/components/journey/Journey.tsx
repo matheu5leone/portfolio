@@ -1,34 +1,20 @@
 import style from '@/components/journey/journey.module.css'
 import Image from 'next/image'
-import LanguageToken from '../intl/Languages'
+import LanguageToken from '../../util/intl/Languages'
 import { BriefcaseBusiness, GraduationCap } from 'lucide-react'
+import { handleMouseMove, handleMouseLeave } from "@/util/mouseHandlers"
 
 interface JourneyProps {
-    languageToken: LanguageToken
+    languageToken: LanguageToken,
+    isAnimated: boolean;
 }
 
-const Journey: React.FC<JourneyProps> = ({ languageToken }) => {
-
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        const target = e.currentTarget as HTMLDivElement;
-        const rect = target.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const xOffset = (x / rect.width - 0.5) * -10;
-        const yOffset = (y / rect.height - 0.5) * -10;
-    
-        target.style.transform = `perspective(1000px) rotateX(${yOffset}deg) rotateY(${xOffset}deg)`;
-    };
-    
-    const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
-        const target = e.currentTarget as HTMLDivElement;
-        target.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-    };
+const Journey: React.FC<JourneyProps> = ({ languageToken, isAnimated }) => {
 
     return (
         <div className={style.container}>
             <div className={style.containerSptechAndDock}>
-                <div className={style.graduation} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+                <div className={style.graduation} {...(isAnimated ? { onMouseMove: handleMouseMove(4), onMouseLeave: handleMouseLeave } : {})}>
                     <div className={style.iconAndModule}>
                         <GraduationCap />
                         <p>{languageToken.getTitleGraduation()}</p>
@@ -50,7 +36,7 @@ const Journey: React.FC<JourneyProps> = ({ languageToken }) => {
                         </div>
                     </div>
                 </div>
-                <div className={style.experience} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+                <div className={style.experience} {...(isAnimated ? { onMouseMove: handleMouseMove(4), onMouseLeave: handleMouseLeave } : {})}>
                     <div className={style.iconAndModule}>
                         <BriefcaseBusiness />
                         <p>{languageToken.getTitleExperience()}</p>
@@ -73,9 +59,19 @@ const Journey: React.FC<JourneyProps> = ({ languageToken }) => {
                     </div>
                 </div>
             </div>
-{/*             <div className={style.resume} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-                <p>{languageToken.getResume()}</p>
-            </div> */}
+            <div className={style.resume} {...(isAnimated ? { onMouseMove: handleMouseMove(3), onMouseLeave: handleMouseLeave } : {})}>
+                <span className={style.resumeImg}>
+                    <Image
+                        className={style.cmatrix}
+                        src="/portfolio/cmatrix.gif"
+                        alt={languageToken.getGreetings()}
+                        width={400}
+                        height={250}
+                        priority
+                    />
+                </span>
+                <span className={style.resumeText}><p>{languageToken.getResume()}</p></span>
+            </div>
         </div>
     )
 }

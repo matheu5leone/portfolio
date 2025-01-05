@@ -3,9 +3,12 @@ import style from "@/styles/Home.module.css";
 import ParticlesComponent from "@/components/particles/ParticlesComponent";
 import Navbar from "@/components/navbar/Navbar";
 import About from "@/components/about/About";
-import En from "@/components/intl/En";
-import Pt from "@/components/intl/Pt";
+import En from "@/util/intl/En";
+import Pt from "@/util/intl/Pt";
 import Journey from "@/components/journey/Journey";
+import AbilityBuilder from "@/components/ability/AbilityBuilder";
+import Footer from "@/components/footer/Footer";
+//import Projects from "@/components/projects/Projects";
 
 export default function Home() {
   const [isEnglish, setLanguage] = useState<boolean>(true);
@@ -36,9 +39,8 @@ export default function Home() {
   }
 
   return (
-    <div className={style.container}>
+    <main className={style.container}>
       <Navbar
-        language={isEnglish}
         switchLanguage={switchLanguage}
         languageToken={languageToken}
         changeTheme={changeTheme}
@@ -47,11 +49,20 @@ export default function Home() {
       />
       {isAnimated ? <ParticlesComponent isDarkTheme={isDarkTheme} /> : null}
       <section className={style.sectionAbout}>
-        <About languageToken={languageToken} /> 
+        <About languageToken={languageToken} />
       </section>
       <section className={style.sectionJourney}>
-        <Journey languageToken={languageToken} />
+        <Journey languageToken={languageToken} isAnimated={isAnimated} />
       </section>
-    </div>
+      <section className={style.sectionAbilities}>
+        <AbilityBuilder languageToken={languageToken} isAnimated={isAnimated} />
+      </section>
+{/*       <section className={style.sectionProjects}>
+        <Projects />
+      </section> */}
+      <section className={style.sectionFooter}>
+        <Footer languageToken={languageToken} />
+      </section>
+    </main>
   );
 }

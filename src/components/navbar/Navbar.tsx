@@ -1,10 +1,9 @@
 import style from "@/components/navbar/navbar.module.css";
 import { Eclipse, Globe, Play, Pause } from "lucide-react";
 import Image from "next/image";
-import LanguageToken from "../intl/Languages";
+import LanguageToken from "../../util/intl/Languages";
 
 interface NavbarProps {
-  language: boolean;
   switchLanguage: () => void;
   languageToken: LanguageToken;
   changeTheme: () => void; 
@@ -12,8 +11,7 @@ interface NavbarProps {
   isAnimated: boolean;
 }
 
-export default function Navbar({ language, switchLanguage, changeTheme, toggleAnimation, isAnimated }: NavbarProps) {
-  const isEnglish = language;
+export default function Navbar({ languageToken, switchLanguage, changeTheme, toggleAnimation, isAnimated }: NavbarProps) {
 
   return (
     <main className={style.navbar}>
@@ -23,8 +21,8 @@ export default function Navbar({ language, switchLanguage, changeTheme, toggleAn
       <button className={style.btnTheme} onClick={switchLanguage}>
         <div className={style.flagContainer}>
           <Image
-            src={isEnglish ? "/portfolio/eua.png" : "/portfolio/brasil.png"}
-            alt={isEnglish ? "EUA" : "Brasil"}
+            src={languageToken.getBoolean() ? "/portfolio/eua.png" : "/portfolio/brasil.png"}
+            alt={languageToken.getBoolean()  ? "EUA" : "Brasil"}
             width={30}
             height={30}
             className={style.flagImage}

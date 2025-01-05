@@ -1,0 +1,80 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    z-index: 1;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 10px;
+    width: 90%;
+    height: auto;
+    max-width: 300px;
+
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+}
+.abilitiesTitle {
+    font-size: 30px;
+}
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 1500px; 
+    gap: 71px; 
+    justify-content: center; 
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+}
+
+@media (min-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(5, 1fr); 
+    }
+}
+
+@media (max-width: 1200px) {
+    .container{
+        margin-top: 100px;
+    }
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    }
+}
+
+@media (max-width: 800px) {
+
+    .grid {
+        
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 5px;
+    }
+    .container h2 {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;
+    }
+    .container {
+        padding: 10px;
+    }
+    .container h2 {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+

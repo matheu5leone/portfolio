@@ -7,6 +7,7 @@
     height: 6vh;
     z-index: 1;
 }
+
 .btnTheme {
     display: flex;
     align-items: center;
@@ -22,6 +23,7 @@
     -webkit-tap-highlight-color: transparent;
     z-index: 2;
 }
+
 .btnTheme:hover {
     opacity: 0.8;
 }
@@ -53,7 +55,14 @@
 .flagImage:hover+.globeIcon {
     opacity: 0;
 }
-.playIcon{
+
+.playIcon {
     left: 49%;
     transform: translate(1px, 0px);
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 10px 20px 10px 0px;
+    }
 }

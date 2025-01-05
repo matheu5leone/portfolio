@@ -5,8 +5,18 @@
 .sectionAbout{
   min-height: calc(100vh - 10vh);
 }
-.sectionAbout, .sectionJourney {
+@media (max-width: 800px) {
+  .sectionAbout{
+    margin-top: 20px;
+    min-height: calc(100vh - 15vh);
+  }
+}
+.sectionAbout, .sectionJourney, .sectionAbilities, .sectionProjects, .sectionFooter {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.sectionAbilities{
+  flex-direction: column;
+  gap: 30px;
 }

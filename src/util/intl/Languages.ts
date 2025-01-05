@@ -1,4 +1,5 @@
 interface LanguageToken{
+    getBoolean() : boolean
     getHello() : string
     getGreetings() : string
     getRole() : string
@@ -9,5 +10,10 @@ interface LanguageToken{
     getTitleGraduation() : string
     getTitleExperience() : string
     getResume() : string
+    getAbilitiesTitle() : string
+    getCV() : string
+    getContactMe() : string
+    getDevelopedBy(): string
+    getAllRightsReserved(): string
 }
 export default LanguageToken
