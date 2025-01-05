@@ -18,10 +18,10 @@ const Footer: React.FC<FooterProps> = ({ languageToken }) => {
             <a href="mailto:matheus.leone.sp@outlook.com" target="_blank" rel="noopener noreferrer">
               <Mail className={style.socialIcon} />
             </a>
-            <a href="https://linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/matheus-leone-sp/" target="_blank" rel="noopener noreferrer">
               <Linkedin className={style.socialIcon} />
             </a>
-            <a href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/matheu5leone" target="_blank" rel="noopener noreferrer">
               <Github className={style.socialIcon} />
             </a>
           </div>
