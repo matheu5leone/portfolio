@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:description" content="Learn more about me as a professional." />
         <meta property="og:image" content="/portfolio/coroa.png" />
       </Head>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   )
 }
