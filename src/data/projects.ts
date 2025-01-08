@@ -34,7 +34,7 @@ export const projects = [
   {
     id: 3,
     title: {
-      en: "Desafio Magalu",
+      en: "Magalu Challenge",
       pt: "Desafio Magalu"
     },
     description: {
