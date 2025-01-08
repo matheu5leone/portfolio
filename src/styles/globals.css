@@ -7,6 +7,7 @@
   --glass: rgba(255, 255, 255, 0.1);
   --blue-highlight:#7dfbffdc;
   --clr-4: #2d8f8591;
+  --tag: #2d756e;
 }
 
 /* Tema escuro ativado */
@@ -15,6 +16,7 @@ body.dark-theme {
   --foreground: #c4c4c4;
   --cards: #2c2c2c;
   --glass: rgba(121, 121, 121, 0.1);
+  --tag: #7dfbffdc;
 }
 
 * {

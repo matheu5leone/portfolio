@@ -1,6 +1,6 @@
 import React from "react";
-import LanguageToken from "../../util/intl/Languages";
-import style from "@/components/ability/ability.module.css";
+import LanguageToken from "../../../util/intl/Languages";
+import style from "./ability.module.css";
 import { handleMouseMove, handleMouseLeave } from "@/util/mouseHandlers"
 
 interface AbilityProps {
@@ -11,7 +11,7 @@ interface AbilityProps {
     name: string;
     description: string;
     icon: string;
-    effect: string;
+    mastery: string;
   };
 }
 
@@ -20,7 +20,7 @@ const Ability: React.FunctionComponent<AbilityProps> = ({ isAnimated, ability })
 
   return (
     <main
-      className={`${style.container} ${ability.effect === "glow" ? style.glow : ""}`}
+      className={`${style.container} ${ability.mastery === "glow" ? style.glow : ""}`}
       {...(isAnimated ? { onMouseMove: handleMouseMove(20), onMouseLeave: handleMouseLeave } : {})}
     >
       <img src={ability.icon} width={50} height={50} alt={ability.name} className={style.icon} />

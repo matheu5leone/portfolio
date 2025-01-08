@@ -50,6 +50,18 @@ class En implements LanguageTokens {
     getAllRightsReserved(): string {
         return "All rights reserved"
     }
+    getProjectDescription(): string {
+        return "Project Description"
+    }   
+    getProjectsTitle(): string {
+        return "My Projects"
+    }
+    getKnowMy(): string {
+        return "Know My"
+    }
+    getJourney(): string {
+        return "Journey"
+    }
 }
 
 export default En

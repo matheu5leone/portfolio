@@ -2,8 +2,16 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 65vh;
+    height: 72vh;
     z-index: 1;
+    gap: 40px;
+}
+.spanTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .containerSptechAndDock {
@@ -66,7 +74,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1310px;
+    width: 69%;
     height: auto;
     z-index: 1;
     transition: transform 0.1s ease-out, box-shadow 0.2s ease-out;
@@ -78,6 +86,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    background-color: rgba(74,141,91,0.281);
+    height: stretch;
 }
 .resumeText {
     width: 70%;
@@ -118,7 +128,38 @@ body.dark-theme .cmatrix {
     opacity: 0.4; /* Opacidade no tema escuro */
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1600px) {
+    .container{
+        height: 800px;
+    }
+    .containerSptechAndDock{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+    .resume{
+        width: 80%;
+        height: auto;
+    }
+    .resumeText:before, .resumeText:hover::before {
+        opacity: 0;
+    }
+    .resumeImg{
+        justify-content: center;
+    }
+    .cmatrix{
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+
+    }
+}
+
+@media (max-width: 1000px) {
     .imageAndText, .containerSptechAndDock, .spans, .iconAndModule, .resume {
         flex-direction: column;
         align-items: center;
@@ -158,12 +199,10 @@ body.dark-theme .cmatrix {
     .resume{
         width: 90%;
         height: 1000px;
+        
     }
     .resumeImg{
         width: 100%;
-    }
-    .cmatrix{
-        border-radius: 10px 10px 0px 0px;
     }
     .resumeText{
         width: 100%;
@@ -172,7 +211,12 @@ body.dark-theme .cmatrix {
 }
 
 @media (max-width: 500px) {
+    .resume{
+        width: 90%;
+        height: 1100px;
+        min-width: 290px;
+    }
     .container{
-        height: 1750px;
+        height: 1900px;
     }
 }

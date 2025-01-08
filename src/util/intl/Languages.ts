@@ -3,6 +3,8 @@ interface LanguageToken{
     getHello() : string
     getGreetings() : string
     getRole() : string
+    getKnowMy() : string
+    getJourney(): string
     getCourse() : string
     getDegree() : string
     getDockRole() : string
@@ -15,5 +17,6 @@ interface LanguageToken{
     getContactMe() : string
     getDevelopedBy(): string
     getAllRightsReserved(): string
+    getProjectsTitle(): string
 }
 export default LanguageToken

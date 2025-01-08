@@ -4,104 +4,104 @@
         "name": "Java",
         "description": "",
         "icon": "/portfolio/technologies/java.png",
-        "effect": "glow"
+        "mastery": "glow"
     },
     {
         "id": 2,
         "name": "Spring",
         "description": "",
         "icon": "/portfolio/technologies/springboot.png",
-        "effect": "glow"
+        "mastery": "glow"
     },
     {
         "id": 3,
         "name": "Docker",
         "description": "",
         "icon": "/portfolio/technologies/docker.png",
-        "effect": ""
+        "mastery": ""
     },
     {
         "id": 4,
         "name": "Linux",
         "description": "",
         "icon": "/portfolio/technologies/linux.png",
-        "effect": "glow"
+        "mastery": "glow"
     },
     {
         "id": 5,
         "name": "React",
         "description": "",
         "icon": "/portfolio/technologies/react.png",
-        "effect": ""
+        "mastery": ""
     },
     {
         "id": 6,
         "name": "Next.js",
         "description": "",
         "icon": "/portfolio/technologies/nextjs.png",
-        "effect": ""
+        "mastery": ""
     },
     {
         "id": 7,
         "name": "TailWind CSS",
         "description": "",
         "icon": "/portfolio/technologies/tailwind.png",
-        "effect": ""
+        "mastery": ""
     },
     {
         "id": 8,
         "name": "Javascript",
         "description": "",
         "icon": "/portfolio/technologies/javascript.png",
-        "effect": ""
+        "mastery": ""
     },
     {
         "id": 9,
         "name": "Typescript",
         "description": "",
         "icon": "/portfolio/technologies/typescript.png",
-        "effect": ""
+        "mastery": ""
     },
     {
         "id": 10,
         "name": "MySQL",
         "description": "",
         "icon": "/portfolio/technologies/mysql.png",
-        "effect": "glow"
+        "mastery": "glow"
     },
     {
         "id": 11,
         "name": "SQL Server",
         "description": "",
         "icon": "/portfolio/technologies/sqlserver.png",
-        "effect": "glow"
+        "mastery": "glow"
     },
     {
         "id": 12,
         "name": "MongoDB",
         "description": "",
         "icon": "/portfolio/technologies/mongodb.png",
-        "effect": ""
+        "mastery": ""
     },
     {
         "id": 13,
         "name": "AWS",
         "description": "",
         "icon": "/portfolio/technologies/aws.png",
-        "effect": "glow"
+        "mastery": "glow"
     },
     {
         "id": 14,
         "name": "Azure",
         "description": "",
         "icon": "/portfolio/technologies/azure.png",
-        "effect": ""
+        "mastery": ""
     },
     {
         "id": 15,
         "name": "Python",
         "description": "",
         "icon": "/portfolio/technologies/python.png",
-        "effect": ""
+        "mastery": ""
     }
 ]

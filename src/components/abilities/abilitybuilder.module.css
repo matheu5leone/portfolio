@@ -18,10 +18,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding-right: 20px;
-}
-.abilitiesTitle {
-    font-size: 30px;
+    flex-direction: column;
 }
 .grid {
     width: 100%;
@@ -41,12 +38,12 @@
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
     .container{
         margin-top: 100px;
     }
     .grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        grid-template-columns: repeat(3, minmax(200px, 1fr)); 
     }
 }
 

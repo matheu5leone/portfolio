@@ -50,6 +50,18 @@ class Pt implements LanguageTokens {
     getAllRightsReserved(): string {
         return "Todos os direitos reservados"
     }
+    getProjectDescription(): string {
+        return "Descrição do Projeto"
+    }
+    getProjectsTitle(): string {
+        return "Meus Projetos"
+    }
+    getKnowMy(): string {
+        return "Conheça Minha"
+    }
+    getJourney(): string {
+        return "Jornada"
+    }
 }
 
 export default Pt

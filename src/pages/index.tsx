@@ -6,9 +6,9 @@ import About from "@/components/about/About";
 import En from "@/util/intl/En";
 import Pt from "@/util/intl/Pt";
 import Journey from "@/components/journey/Journey";
-import AbilityBuilder from "@/components/ability/AbilityBuilder";
+import AbilityBuilder from "@/components/abilities/AbilityBuilder";
 import Footer from "@/components/footer/Footer";
-//import Projects from "@/components/projects/Projects";
+import ProjectBuilder from "@/components/projects/ProjectBuilder";
 
 export default function Home() {
   const [isEnglish, setLanguage] = useState<boolean>(true);
@@ -57,9 +57,9 @@ export default function Home() {
       <section className={style.sectionAbilities}>
         <AbilityBuilder languageToken={languageToken} isAnimated={isAnimated} />
       </section>
-{/*       <section className={style.sectionProjects}>
-        <Projects />
-      </section> */}
+      <section className={style.sectionProjects}>
+        <ProjectBuilder languageToken={languageToken} />
+      </section>
       <section className={style.sectionFooter}>
         <Footer languageToken={languageToken} />
       </section>

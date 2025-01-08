@@ -1,7 +1,7 @@
 import style from '@/components/journey/journey.module.css'
 import Image from 'next/image'
 import LanguageToken from '../../util/intl/Languages'
-import { BriefcaseBusiness, GraduationCap } from 'lucide-react'
+import { BriefcaseBusiness, GraduationCap, BookOpenCheck  } from 'lucide-react'
 import { handleMouseMove, handleMouseLeave } from "@/util/mouseHandlers"
 
 interface JourneyProps {
@@ -13,6 +13,11 @@ const Journey: React.FC<JourneyProps> = ({ languageToken, isAnimated }) => {
 
     return (
         <div className={style.container}>
+            <span className={style.spanTitle}>
+                <span>{languageToken.getKnowMy()}</span>
+                <h1>{languageToken.getJourney()}</h1>
+                <BookOpenCheck />
+            </span>
             <div className={style.containerSptechAndDock}>
                 <div className={style.graduation} {...(isAnimated ? { onMouseMove: handleMouseMove(4), onMouseLeave: handleMouseLeave } : {})}>
                     <div className={style.iconAndModule}>
