@@ -5,6 +5,7 @@ import Script from "next/script";
 
 export default function App({ Component, pageProps }: AppProps) {
   const ANALYTICS = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
+
   return (
     <>
       <Head>
@@ -13,21 +14,29 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:title" content="Matheus Leone - Portfolio" />
         <meta property="og:description" content="Learn more about me as a professional." />
         <meta property="og:image" content="/portfolio/coroa.png" />
-
-        {/* Google Analytics */}
-        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS}`}>
-        </Script>
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${ANALYTICS}');
-            `,
-          }}
-        />
       </Head>
+      
+      {/* Google Analytics */}
+      {ANALYTICS && (
+        <>
+          <Script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS}`}
+          />
+          <Script
+            id="google-analytics"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${ANALYTICS}');
+              `,
+            }}
+          />
+        </>
+      )}
+      
       <Component {...pageProps} />
     </>
   );
