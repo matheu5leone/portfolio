@@ -15,28 +15,27 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:description" content="Learn more about me as a professional." />
         <meta property="og:image" content="/portfolio/coroa.png" />
       </Head>
-      
+
       {/* Google Analytics */}
-      {ANALYTICS && (
-        <>
-          <Script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS}`}
-          />
-          <Script
-            id="google-analytics"
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${ANALYTICS}');
-              `,
-            }}
-          />
-        </>
-      )}
-      
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS}`}
+      />
+      <Script
+        id="google-analytics"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){
+              console.log('Google Analytics event sent:', arguments); // Log no console
+              dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', '${ANALYTICS}');
+          `,
+        }}
+      />
+
       <Component {...pageProps} />
     </>
   );
