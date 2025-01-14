@@ -68,6 +68,7 @@ jobs:
         env:
           NEXT_PUBLIC_WORLD: ${{ secrets.NEXT_PUBLIC_WORLD }}
           NODE_ENV: ${{ secrets.NODE_ENV }}
+          NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
       - name: Upload artifact
