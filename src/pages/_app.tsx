@@ -4,7 +4,7 @@ import Head from "next/head";
 import Script from "next/script";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const ANALYTICS = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
+  const ANALYTICS = "G-6BQPVZ4VBR";
 
   return (
     <>
