@@ -3,7 +3,6 @@ import LanguageToken from "../../../util/intl/Languages";
 import style from "./ability.module.css";
 import { handleMouseMove, handleMouseLeave } from "@/util/mouseHandlers"
 import Image from "next/image";
-import { Star } from 'lucide-react'
 
 interface AbilityProps {
   languageToken: LanguageToken;
