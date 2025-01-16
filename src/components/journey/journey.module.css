@@ -2,11 +2,13 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 72vh;
+    height: auto;
+    width: auto;
     z-index: 1;
     gap: 40px;
 }
-.spanTitle{
+
+.spanTitle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,209 +16,200 @@
     gap: 10px;
 }
 
-.containerSptechAndDock {
-    display: flex;
-    justify-content: space-evenly;
-    width: 80vw;
-    height: 30vh;
+.gridContainer {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns with equal width */
+    grid-template-rows: auto auto;
+    /* Automatically sized rows */
+    gap: 30px;
+    /* Space between grid items */
+    width: 90%;
+    max-width: 1400px;
 }
 
 .graduation,
-.experience {
+.experience,
+.resume {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 600px;
-    height: 250px;
     background-color: var(--cards);
     border-radius: 10px;
-    transition: transform 0.1s ease-out, box-shadow 0.2s ease-out;
+    text-align: center;
 }
 
-.imageAndText {
-    display: flex;
-}
-
-.title {
-    padding-left: 40px;
-}
-
-.spans {
-    display: flex;
-    width: 350px;
+.graduation {
+    grid-column: 1;
+    /* First column */
+    grid-row: 1;
+    /* First row */
     flex-direction: column;
-    gap: 20px;
-    padding-left: 50px;
-    font-size: 20px;
+    padding: 20px;
+}
+
+.experience {
+    grid-column: 2;
+    /* Second column */
+    grid-row: 1;
+    /* First row */
+    flex-direction: column;
+    padding: 20px;
 }
 
 .iconAndModule {
     width: 100%;
     display: flex;
     align-items: center;
-    padding-left: 90px;
     gap: 11px;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.imageAndText {
+    display: flex;
+
 }
 
 .image {
     border-radius: 10px;
     transition: 0.2s ease;
+    margin-left: 20px;
 }
 
 .image:hover {
     box-shadow: 0 0 15px rgba(125, 251, 255, 0.837);
 }
 
-.resume {
-    background-color: var(--cards);
-    border-radius: 10px;
+.spans {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 69%;
-    height: auto;
-    z-index: 1;
-    transition: transform 0.1s ease-out, box-shadow 0.2s ease-out;
-    transform-style: preserve-3d;
-    overflow: hidden;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    gap: 8px;
+    text-wrap: nowrap;
 }
+
+.resume {
+    grid-column: 1 / span 2;
+    /* Spans both columns */
+    grid-row: 2;
+    /* Second row */
+
+}
+
 .resumeImg {
     width: 30%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: rgba(74,141,91,0.281);
+    background-color: rgba(74, 141, 91, 0.281);
     height: stretch;
+    border-radius: 10px 0px 0px 10px;
 }
+
+.cmatrix {
+    opacity: 1;
+    width: stretch;
+    border-radius: 10px 0px 0px 10px;
+}
+
 .resumeText {
     width: 70%;
-    height: 100%;
+    padding: 10px;
     display: flex;
-    justify-content: center;
     align-items: center;
     transition: all 1.5s ease;
     position: relative;
     text-align: justify;
-    background: linear-gradient(90deg, rgba(74,141,91,0.281) 0%, rgba(40, 180, 173, 0.219) 10%, rgba(40, 180, 173, 0.100) 20%, rgba(12,0,255,0) 30%);
-}
-.resumeText:before {
-    content: ""; 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    transition: opacity 1.5s ease;
-    opacity: 0;
-    background: linear-gradient(90deg, rgba(74, 141, 91, 0.281) 0%, rgba(40, 180, 173, 0.219) 20%, rgba(40, 180, 173, 0.100) 30%, rgba(12,0,255,0) 50%);
-}
-.resumeText:hover::before {
-    background: linear-gradient(90deg, rgba(74,141,91,0.281) 0%, rgba(40, 180, 173, 0.219) 30%, rgba(40, 180, 173, 0.100) 50%, rgba(12,0,255,0) 100%); 
-    opacity: 0.5;
-}
-.resumeText p {
-    font-size: 16px;
-    padding: 15px;
-}
-.cmatrix{
-    opacity: 1;
-    width: 100%;
-    border-radius: 10px 0px 0px 10px;
-}
-body.dark-theme .cmatrix {
-    opacity: 0.4; /* Opacidade no tema escuro */
+    background: linear-gradient(90deg, rgba(74, 141, 91, 0.281) 0%, rgba(40, 180, 173, 0.219) 10%, rgba(40, 180, 173, 0.100) 20%, rgba(12, 0, 255, 0) 30%);
 }
 
-@media (max-width: 1600px) {
-    .container{
-        height: 800px;
-    }
-    .containerSptechAndDock{
+@media (max-width: 1175px) {
+    .resume {
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        justify-content: center;
-        gap: 20px;
-        padding-bottom: 20px;
-    }
-    .resume{
-        width: 80%;
-        height: auto;
-    }
-    .resumeText:before, .resumeText:hover::before {
-        opacity: 0;
-    }
-    .resumeImg{
-        justify-content: center;
-    }
-    .cmatrix{
+        width: auto;
         border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 90%;
+    }
 
+    .resumeImg {
+        justify-content: center;
+        width: 100%;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .cmatrix {
+        border-radius: 10px 10px 0px 0px;
+        object-fit: cover;
+    }
+
+    .resumeText {
+        width: auto;
+        background: linear-gradient(180deg, rgba(74, 141, 91, 0.281) 0%, rgba(40, 180, 173, 0.219) 10%, rgba(40, 180, 173, 0.100) 20%, rgba(12, 0, 255, 0) 30%);
     }
 }
 
 @media (max-width: 1000px) {
-    .imageAndText, .containerSptechAndDock, .spans, .iconAndModule, .resume {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    .gridContainer {
+        grid-template-columns: 100%;
+        /* Uma única coluna */
+        grid-template-rows: auto auto auto;
+        /* Três linhas */
     }
-    .imageAndText{
-        gap: 20px;
+
+    .graduation {
+        grid-column: 1;
+        /* Ajustar ao layout de uma coluna */
+        grid-row: 1;
     }
-    .title, .iconAndModule, .spans {
-        padding: 0px;
-        font-size: 16px;
-    }
-    .container {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 1640px;
-        gap: 30px;
-    }
-    .containerSptechAndDock {
-        width: 100%;
-        height: 800px;
-        gap: 30px;
-    }
-    .image{
-        width: auto;
-        height: auto;
-    }
-    .graduation{
-        box-shadow: 0px -30px 30px -40px rgba(0, 194, 253, 0.3);
-    }
-    .graduation,
+
     .experience {
-        width: 90%;
-        height: 400px;
+        grid-column: 1;
+        /* Ajustar ao layout de uma coluna */
+        grid-row: 2;
     }
-    .resume{
-        width: 90%;
-        height: 1000px;
-        
-    }
-    .resumeImg{
-        width: 100%;
-    }
-    .resumeText{
-        width: 100%;
-        background: linear-gradient(180deg, rgba(74, 141, 91, 0.281) 0%, rgba(40, 180, 173, 0.219) 20%, rgba(40, 180, 173, 0.100) 30%, rgba(12,0,255,0) 50%);
+
+    .resume {
+        grid-column: 1;
+        /* Ocupar toda a largura da coluna */
+        grid-row: 3;
     }
 }
 
-@media (max-width: 500px) {
-    .resume{
-        width: 90%;
-        height: 1100px;
-        min-width: 290px;
+@media (max-width: 480px) {
+    .container {
+        gap: 20px;
     }
-    .container{
-        height: 1900px;
+    .gridContainer {
+        grid-template-rows: auto auto auto;
+    }
+    .image {
+        margin: 0;
+        border-radius: 10px;
+    }
+    .cmatrix{
+        width: 90%;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .gridContainer {
+        gap: 20px;
+    }
+
+    .spans {
+        font-size: 14px;
+    }
+
+    .resumeText {
+        height: auto;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .spans {
+        font-size: 10px;
     }
 }
