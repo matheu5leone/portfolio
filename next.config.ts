@@ -9,12 +9,7 @@ const nextConfig = {
     loader: 'default',
     path: '/portfolio/', // Ajuste o caminho para as imagens com basePath
   },
-  trailingSlash: true, // Adiciona barra no final das URLs
-  i18n: {
-    locales: ['en', 'pt'],
-    defaultLocale: 'en',
-    localeDetection: false, // Isso evita problemas com detecção automática
-  },
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
