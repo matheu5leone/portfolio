@@ -51,7 +51,7 @@
 .title{
     display: flex;
     width: 100%;
-    height: 10%;
+    height: 8%;
     justify-content: center;
     align-items: center;
     font-size: 22px;
@@ -60,7 +60,7 @@
 .description{
     display: flex;
     width: 100%;
-    height: 25%;
+    height: 29%;
     justify-content: center;
     align-items: center;
     font-size: 16px;
@@ -73,16 +73,13 @@
 .boxTagsAndColaborators{
     display: flex;
     width: 100%;
-    height: 20%;
-    justify-content: space-around;
+    height: 18%;
+    justify-content: space-between;
     align-items: center;
     box-shadow: 0 -10px 10px -10px rgba(124, 124, 124, 0.315);
 }
 .boxTags{
     width: 65%;
-}
-.boxColaborators{
-    width: 35%;
 }
 .boxTags, .boxColaborators{
     display: flex;
@@ -108,8 +105,8 @@
     display: inline-block;
     white-space: nowrap;
     background-color: var(--tag);
-    padding: 3px 10px;
     border-radius: 10px;
+    padding: 1px 5px 3px 5px;
     color: var(--cards);
     font-size: 14px;
     text-align: center;
@@ -120,8 +117,6 @@
 
 .tags b{
     display: inline;
-    background-color: var(--tag);
-    padding: 1px 5px 3px;
     border-radius: 10px;
     color: var(--cards);
 }
@@ -133,7 +128,7 @@
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    gap: 10px;
+    gap: 8px;
 }
 .colaborators {
     display: flex;
@@ -143,8 +138,8 @@
 }
 
 .colaborators img {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -156,7 +151,7 @@
 
 
 .colaborators > span {
-    flex: 1 0 30%;
+    flex: 1 0 15%;
     display: flex;
     justify-content: center;
 }
@@ -197,7 +192,8 @@
     }
 
     .colaborators {
-        justify-content: flex-start; 
+        width: 100%;
+        justify-content: center; 
         gap: 15px;
         
     }
@@ -212,6 +208,10 @@
 }
 
 @media screen and (max-width: 480px) {
+
+    .titleAndPhotos p{
+        font-size: 12px;
+    }
     .boxTagsAndColaborators {
         gap: 15px; 
         padding: 8px;
@@ -230,5 +230,8 @@
     .colaborators img {
         width: 35px; 
         height: 35px;
+    }
+    .description p{
+        font-size: 12px;
     }
 }

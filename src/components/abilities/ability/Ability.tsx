@@ -2,6 +2,8 @@ import React from "react";
 import LanguageToken from "../../../util/intl/Languages";
 import style from "./ability.module.css";
 import { handleMouseMove, handleMouseLeave } from "@/util/mouseHandlers"
+import Image from "next/image";
+import { Star } from 'lucide-react'
 
 interface AbilityProps {
   languageToken: LanguageToken;
@@ -21,9 +23,9 @@ const Ability: React.FunctionComponent<AbilityProps> = ({ isAnimated, ability })
   return (
     <main
       className={`${style.container} ${ability.mastery === "glow" ? style.glow : ""}`}
-      {...(isAnimated ? { onMouseMove: handleMouseMove(20), onMouseLeave: handleMouseLeave } : {})}
+      {...(isAnimated ? { onMouseMove: handleMouseMove(40), onMouseLeave: handleMouseLeave } : {})}
     >
-      <img src={ability.icon} width={50} height={50} alt={ability.name} className={style.icon} />
+      <Image src={ability.icon} width={50} height={50} alt={ability.name} className={style.icon} />
       <h2>{ability.name}</h2>
       <p>{ability.description}</p>
     </main>

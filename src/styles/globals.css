@@ -31,3 +31,46 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+.swiper-wrapper {
+  position: relative;
+  width: auto; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+}
+
+/* Gradiente escurecido nas bordas */
+.swiper:before,
+.swiper:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 80px; /* Largura do gradiente */
+  height: 95%;
+  pointer-events: none; /* Ignora interações com o gradiente */
+  z-index: 5;
+}
+
+/* Gradiente da esquerda */
+.swiper:before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
+}
+
+/* Gradiente da direita */
+.swiper:after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
+}
+.swiper-button-next, .swiper-button-prev{
+  background-color: var(--cards);
+  border-radius: 50%;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: #202020 0px 0px 10px;
+  transition: 0.5s ease;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover{
+  transform:translateY(-3px);
+}
